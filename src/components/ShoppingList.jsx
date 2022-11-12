@@ -98,7 +98,7 @@ const ShoppingList = () => {
 
     return (
         <div className='md:container sm:p-0 bg-white mt-4 text-black py-5 px-8 h-auto md:flex justify-between box-border'>
-            <div>
+            <div className='p-4'>
                 <h1 className='text-4xl text-blue-600 font-bold '>Shopping App 🛒</h1>
                 <div className='md:w-96 w-full max-W-xs mt-4'>
                     <form className='shadow-md rounded px-8 pt-6 pb-8 mb-4' onSubmit={isEdit ? updateHandler : submitHandler}>
@@ -117,7 +117,7 @@ const ShoppingList = () => {
             </div>
 
             <div className='border-l-2 border-blue-600 p-4 md:w-3/5'>
-                <ul className='min-h-min'>
+                <ul className='min-h-48'>
                     {shoppingList.length > 0 ? shoppingList.map((item, index) => (
                         <li key={index} className={item.isChecked ? 'line-through flex justify-between border-b-2 border-blue-400 p-3' : 'flex justify-between border-b-2 border-blue-400 p-3'}>
                             <input type="checkbox" name="" id="" onChange={(e) => checkboxHandler(e, index)} />

@@ -5,7 +5,7 @@ import './App.css'
 function App() {
 
   return (
-    <div className="container mx-auto bg-gray-900 text-white rounded-xl shadow border p-8 m-4 h-screen">
+    <div className="container mx-auto bg-gray-900 text-white rounded-xl shadow border p-8 m-4 h-auto">
       <p className="text-3xl text-gray-700 font-bold mb-5">
         Welcome!
       </p>
