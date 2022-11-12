@@ -59,7 +59,9 @@ const ShoppingList = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        setShoppingList((prev) => [...prev, { name: name, price: price, isChecked: false }]);
+        if ((name != '') && (+price > 0)) {
+            setShoppingList((prev) => [...prev, { name: name, price: price, isChecked: false }]);
+        }
         updateTotalPrice()
     }
 
@@ -68,9 +70,9 @@ const ShoppingList = () => {
         const itemToUpdate = listCopy.find(item => listCopy.indexOf(item) === id);
         itemToUpdate.isChecked = e.target.checked;
         setShoppingList(listCopy);
-        updateCheckedPrice();
-        updateUncheckedPrice();
-        console.log(shoppingList);
+        // updateCheckedPrice();
+        // updateUncheckedPrice();
+        // console.log(shoppingList);
     }
 
     const updateHandler = (e) => {
@@ -81,6 +83,7 @@ const ShoppingList = () => {
         setShoppingList(updateListCopy);
         setName('');
         setPrice(0);
+        setIsEdit(false);
     }
 
     const editIconHandler = (id) => {
