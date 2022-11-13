@@ -125,19 +125,19 @@ const ShoppingList = () => {
             </div>
 
             <div className='border-t-2 lg:border-l-2  border-blue-600 p-4 md:w-3/5 mx-auto'>
-                <ul className='min-h-48'>
+                <ul style={{ minHeight: "250px" }}>
                     {shoppingList.length > 0 ? shoppingList.map((item, index) => (
                         <li key={index} className={item.isChecked ? 'line-through flex justify-between border-b-2 border-blue-400 md:p-3 p-2' : 'flex justify-between border-b-2 border-blue-400 md:p-3 p-2'}>
                             <input type="checkbox" name="" id="" onChange={(e) => checkboxHandler(e, index)} />
-                            <span className='px-4 w-3/6 lg:w-3/5'>{item.name}</span>
+                            <span className='mx-4 w-3/6 lg:w-3/5'>{item.name}</span>
                             <span className='w-1/7 mr-2'>${item.price}</span>
                             <div className='w-auto'>
-                                <button className='md:mr-4 mr-2 cursor-pointer hover:text-blue-800' title='Edit' onClick={() => editIconHandler(index)}><FaEdit /></button>
-                                <button className='cursor-pointer hover:text-red-800' title='Delete' onClick={() => deleteHandler(index)}><FaTrash /></button>
+                                <button className='md:mr-4 mr-2 cursor-pointer text-blue-800' title='Edit' onClick={() => editIconHandler(index)}><FaEdit /></button>
+                                <button className='cursor-pointer text-red-800' title='Delete' onClick={() => deleteHandler(index)}><FaTrash /></button>
                             </div>
 
                         </li>
-                    )) : <h2 className='pb-32 text-3xl text-red-800'>No list at the moment</h2>}
+                    )) : <h2 className='pb-32 text-3xl text-red-800 text-bolder text-center'>No list found</h2>}
                 </ul>
                 <div className='border shadow-lg text-white mt-10 h-18 lg:py-4 lg:px-6 py-4 px-2 bg-blue-600 rounded-lg '>
                     <p className='flex justify-between text-center'><span className='mr-2'>Total: ${totalPrice}</span><span className='mr-2'>Spent: ${checkedPrice}</span><span>Bal: ${uncheckedPrice}</span></p>
